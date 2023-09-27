@@ -58,9 +58,9 @@
             <div>
                 <b><?php echo $hotel["name"] ?></b>
                 <p><?php echo $hotel["description"] ?></p>
-                <p><?php echo $hotel["parking"] ?></p>
-                <p><?php echo $hotel["vote"] ?></p>
-                <p><?php echo $hotel["distance_to_center"] ?></p>
+                <p><?php echo $hotel["parking"]  ? "Con Parcheggio" : "Senza Parcheggio" ?></p>
+                <p>Voto: <?php echo $hotel["vote"] ?></p>
+                <p>distanza dal centro : <?php echo $hotel["distance_to_center"] ?></p>
             </div>
         <?php endforeach; ?>
      </div>
