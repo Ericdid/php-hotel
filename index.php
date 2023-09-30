@@ -44,26 +44,31 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotels</title>
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
-    <div class="container d-flex justify-content-between">
-        <?php foreach($hotels as $hotel): ?>
-            <div>
-                <b><?php echo $hotel["name"] ?></b>
-                <p><?php echo $hotel["description"] ?></p>
-                <p><?php echo $hotel["parking"]  ? "Con Parcheggio" : "Senza Parcheggio" ?></p>
-                <p>Voto: <?php echo $hotel["vote"] ?></p>
-                <p>distanza dal centro : <?php echo $hotel["distance_to_center"] ?></p>
-            </div>
+    <table class="table">
+        <thead>
+            <?php foreach($hotels as $hotel): ?>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"><?php echo $hotel["name"] ?></th>
+                <th scope="col"><?php echo $hotel["description"] ?></th>
+                <th scope="col"><?php echo $hotel["parking"]  ? "Con Parcheggio" : "Senza Parcheggio" ?></th>
+                <th>Voto: <?php echo $hotel["vote"] ?></th>
+                <th>distanza dal centro : <?php echo $hotel["distance_to_center"] ?></th>
+            </tr>
+        </thead>
         <?php endforeach; ?>
-     </div>
-    
+    </table>
 </body>
+
 </html>
